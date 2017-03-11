@@ -1,0 +1,28 @@
+<!-- <script src="canvas2image.js"></script>
+<ion-view view-title="Account">
+  <ion-content>
+    <ion-list>
+    <ion-toggle  ng-model="settings.enableFriends">
+        <button class="button button-block button-calm" ng-click="window.canvas2ImagePlugin.saveImageDataToLibrary()"> 下载图片 </button>
+    </ion-toggle>
+    </ion-list>
+  </ion-content>
+</ion-view> -->
+
+
+<ion-view class="has-header padding" ng-controller="imageController">
+    <ion-list>
+      <ion-toggle  ng-model="settings.enableFriends">
+          <button class="button button-block button-calm" ng-click="window.canvas2ImagePlugin.saveImageDataToLibrary()"> 下载图片 </button>
+      </ion-toggle>
+      </ion-list>
+  <button class="button button-energized" ng-click="addImage()">
+	  Add image
+  </button><br><br>
+  <button class="button button-energized" ng-click="urlForImage('www.bntake.com/python/jpg/1314870579931D2.jpg')">
+    Add image
+  </button><br><br>
+  <ion-scroll>
+	  <img ng-repeat="image in images" ng-src="{{urlForImage('www.bntake.com/python/jpg/1314870579931D2.jpg')}}" height="200px"/>
+  </ion-scroll>
+</ion-view>
